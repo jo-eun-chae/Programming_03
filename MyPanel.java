@@ -15,6 +15,8 @@ public class MyPanel extends JPanel
     JButton b_clear;
     JTextArea textArea;
     
+    JTextField tfName;
+    
     public MyPanel(){
         String[] grade = {"1학년", "2학년", "3학년", "4학년"};
         cb_grade = new JComboBox<String>(grade);
@@ -29,7 +31,7 @@ public class MyPanel extends JPanel
         JLabel lbAddress = new JLabel("주소");
         JLabel lbGrade = new JLabel("학년");
         
-        JTextField tfName = new JTextField(20);
+        tfName = new JTextField(20);
         JTextField tfDepartment = new JTextField("글로벌소프트웨어학과", 20);
         JTextField tfAddress = new JTextField("아산시 ...", 20);
         
@@ -44,5 +46,10 @@ public class MyPanel extends JPanel
         this.add(b_add);
         this.add(b_clear);
         this.add(new JScrollPane(textArea));
+    }
+    
+    public void actionPerfromd(ActionEvent e){
+        tfName = (JTextField)e.getSource();
+        textArea.append(tfName.getText() + "\n");
     }
 }
