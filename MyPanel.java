@@ -18,6 +18,7 @@ public class MyPanel extends JPanel implements ActionListener
     JButton b_add;
     JButton b_clear;
     JTextArea textArea;
+    
     public MyPanel(){
         JLabel lbName = new JLabel("이름");
         JLabel lbDepartment = new JLabel("학과");
@@ -34,6 +35,7 @@ public class MyPanel extends JPanel implements ActionListener
         b_add = new JButton("추가");
         b_clear = new JButton("Clear");
         textArea = new JTextArea(15, 25);
+        textArea.setEditable(false);
                 
         this.add(lbName);
         this.add(tfName);
@@ -47,10 +49,11 @@ public class MyPanel extends JPanel implements ActionListener
         this.add(b_add);
         this.add(b_clear);
         this.add(new JScrollPane(textArea));
-
+        
         b_add.addActionListener(this);
         b_clear.addActionListener(this);
     }
+    
     public void actionPerformed(ActionEvent e){
         if(e.getSource().equals(b_add)){
             String text1 = tfName.getText();
@@ -67,6 +70,9 @@ public class MyPanel extends JPanel implements ActionListener
             textArea.append("---------------------------------------------\n");
         }
         if(e.getSource().equals(b_clear)){
+            tfName.setText("");
+            tfDepartment.setText("");
+            tfAddress.setText("");
             textArea.setText("");
         }
     }
