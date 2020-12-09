@@ -1,33 +1,27 @@
+import javax.swing.*;
 
 /**
- * Write a description of class MyPanel here.
+ * 과제#3
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (2019315026 전유정, 2019315011 조은채)
+ * @version (2020.12.09)
  */
-public class MyPanel
+public class MyPanel extends JPanel
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class MyPanel
-     */
-    public MyPanel()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public MyPanel(){
+        JLabel lbName = new JLabel("이름");
+        JLabel lbDepartment = new JLabel("학과");
+        JLabel lbAddress = new JLabel("주소");
+        
+        JTextField tfName = new JTextField(20);
+        JTextField tfDepartment = new JTextField("글로벌소프트웨어학과", 20);
+        JTextField tfAddress = new JTextField("아산시 ...", 20);
+        
+        this.add(lbName);
+        this.add(tfName);
+        this.add(lbDepartment);
+        this.add(tfDepartment);
+        this.add(lbAddress);
+        this.add(tfAddress);
     }
 }
