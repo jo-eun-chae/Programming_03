@@ -18,6 +18,7 @@ public class MyPanel extends JPanel implements ActionListener
     JButton b_add;
     JButton b_clear;
     JTextArea textArea;
+    
     public MyPanel(){
         JLabel lbName = new JLabel("이름");
         JLabel lbDepartment = new JLabel("학과");
@@ -34,6 +35,7 @@ public class MyPanel extends JPanel implements ActionListener
         b_add = new JButton("추가");
         b_clear = new JButton("Clear");
         textArea = new JTextArea(15, 25);
+        textArea.setEditable(false);
                 
         this.add(lbName);
         this.add(tfName);
@@ -47,15 +49,34 @@ public class MyPanel extends JPanel implements ActionListener
         this.add(b_add);
         this.add(b_clear);
         this.add(new JScrollPane(textArea));
-
+        
+        tfName.addActionListener(this);
+        tfDepartment.addActionListener(this);
+        cb_grade.addActionListener(this);
+        tfAddress.addActionListener(this);
         b_add.addActionListener(this);
-        //b_clear.addActionListener(this);
+        b_clear.addActionListener(this);
+                
     }
+    
     public void actionPerformed(ActionEvent e){
-        textArea.append("이름 : " + tfName.getText());
-        textArea.append("\n학과 : " + tfDepartment.getText());
-        textArea.append("\n학년 : " + cb_grade.getSelectedItem().toString());
-        textArea.append("\n주소 : " + tfAddress.getText());
-        textArea.append("\n---------------------\n");
+        if(e.getSource().equals(b_add)){
+            String text1 = tfName.getText();
+            textArea.append("이름 : " + text1 + "\n");
+                
+            String text2 = tfDepartment.getText();
+            textArea.append("학과 : " + text2 + "\n");
+                
+            String text3 = cb_grade.getSelectedItem().toString();
+            textArea.append("학년 : " + text3 + "\n");
+            
+            String text4 = tfAddress.getText();
+            textArea.append("주소 : " + text4 + "\n");
+            textArea.append("---------------------------------------------\n");
+        }
+        
+        if(e.getSource().equals(b_clear)){
+            textArea.setText("");
+        }
     }
 }
