@@ -50,10 +50,6 @@ public class MyPanel extends JPanel implements ActionListener
         this.add(b_clear);
         this.add(new JScrollPane(textArea));
         
-        tfName.addActionListener(this);
-        tfDepartment.addActionListener(this);
-        cb_grade.addActionListener(this);
-        tfAddress.addActionListener(this);
         b_add.addActionListener(this);
         b_clear.addActionListener(this);
                 
