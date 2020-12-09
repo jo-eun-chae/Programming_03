@@ -1,33 +1,18 @@
+import javax.swing.*;
 
 /**
- * Write a description of class TextFieldFrame here.
+ * 과제#3
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (2019315011 조은채)
+ * @version (2020.12.09)
  */
-public class TextFieldFrame
+public class TextFieldFrame extends JFrame
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class TextFieldFrame
-     */
-    public TextFieldFrame()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public TextFieldFrame(){
+        this.setTitle("과제#3(2019315026 전유정, 2019315011 조은채)");
+        this.setSize(300, 500);
+        
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
