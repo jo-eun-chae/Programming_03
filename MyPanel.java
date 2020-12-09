@@ -1,3 +1,6 @@
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 
 /**
  * Write a description of class MyPanel here.
@@ -5,29 +8,25 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class MyPanel
+public class MyPanel extends JPanel
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class MyPanel
-     */
-    public MyPanel()
-    {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    JComboBox<String> cb_grade;
+    JButton b_add;
+    JButton b_clear;
+    JTextArea textArea;
+    
+    public MyPanel(){
+        String[] grade = {"1학년", "2학년", "3학년", "4학년"};
+        cb_grade = new JComboBox<String>(grade);
+        
+        b_add = new JButton("추가");
+        b_clear = new JButton("Clear");
+        textArea = new JTextArea(30,30);
+        
+        this.add(b_add);
+        this.add(b_clear);
+        this.add(textArea);
+        this.add(textArea);
+    
     }
 }
