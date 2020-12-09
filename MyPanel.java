@@ -49,13 +49,25 @@ public class MyPanel extends JPanel implements ActionListener
         this.add(new JScrollPane(textArea));
 
         b_add.addActionListener(this);
-        //b_clear.addActionListener(this);
+        b_clear.addActionListener(this);
     }
     public void actionPerformed(ActionEvent e){
-        textArea.append("이름 : " + tfName.getText());
-        textArea.append("\n학과 : " + tfDepartment.getText());
-        textArea.append("\n학년 : " + cb_grade.getSelectedItem().toString());
-        textArea.append("\n주소 : " + tfAddress.getText());
-        textArea.append("\n---------------------\n");
+        if(e.getSource().equals(b_add)){
+            String text1 = tfName.getText();
+            textArea.append("이름 : " + text1 + "\n");
+                
+            String text2 = tfDepartment.getText();
+            textArea.append("학과 : " + text2 + "\n");
+                
+            String text3 = cb_grade.getSelectedItem().toString();
+            textArea.append("학년 : " + text3 + "\n");
+            
+            String text4 = tfAddress.getText();
+            textArea.append("주소 : " + text4 + "\n");
+            textArea.append("---------------------------------------------\n");
+        }
+        if(e.getSource().equals(b_clear)){
+            textArea.setText("");
+        }
     }
 }
