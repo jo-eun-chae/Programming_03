@@ -54,7 +54,7 @@ public class MyPanel extends JPanel implements ActionListener
     public void actionPerformed(ActionEvent e){
         textArea.append("이름 : " + tfName.getText());
         textArea.append("\n학과 : " + tfDepartment.getText());
-        textArea.append("\n학년 : ");
+        textArea.append("\n학년 : " + cb_grade.getSelectedItem().toString());
         textArea.append("\n주소 : " + tfAddress.getText());
         textArea.append("\n---------------------\n");
     }
