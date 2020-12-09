@@ -41,6 +41,6 @@ public class MyPanel extends JPanel
         this.add(cb_grade);
         this.add(b_add);
         this.add(b_clear);
-        this.add(textArea);
+        this.add(new JScrollPane(textArea));
     }
 }
